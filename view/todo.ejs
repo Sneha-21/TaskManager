@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Todo App</title>
+  <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+</head>
+
+<body>
+  <div class="todo-container">
+    <h2>Task Manager</h2>
+    <div class="todo">
+      <form action="/addTask" method="POST" class="todo-header">
+        <input type="text" name="content" />
+        <button type="submit"><span class="fas fa-plus"></span></button>
+      </form>
+      <ul class="todo-list">
+        <% tasks.forEach(details=> { %>
+          <li class="todo-list-item">
+            <div class="todo-list-item-name">
+              <%= details.content %>
+            </div>
+            <a href="/editTask/<%= details._id %>" class="edit">
+              <span class="fas fa-edit"></span>
+            </a>
+            <form action="/deleteTask/<%= details._id %>" method="delete">
+              <button type="submit"><span class="fas fa-times"></span></button>
+            </form>
+
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+  </div>
+</body>
