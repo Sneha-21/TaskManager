@@ -23,10 +23,9 @@
             <a href="/editTask/<%= details._id %>" class="edit">
               <span class="fas fa-edit"></span>
             </a>
-            <form action="/deleteTask/<%= details._id %>" method="delete">
+            <form action="/deleteTask/<%= details._id %>">
               <button type="submit"><span class="fas fa-times"></span></button>
             </form>
-
           </li>
           <% }) %>
       </ul>

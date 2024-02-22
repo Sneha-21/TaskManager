@@ -1,8 +1,8 @@
 const task = require("../model/Task");
-const mongoose = require("mongoose");
 
 const addNewTask = async (req, res) => {
   const { content } = req.body;
+
   try {
     await task.create({ content });
     res.redirect("/");

@@ -2,6 +2,6 @@ const express = require("express");
 const router = express.Router();
 const deleteTask = require("../controllers/deleteTaskController");
 
-router.delete("/:id", deleteTask);
+router.get("/:id", deleteTask);
 
 module.exports = router;
